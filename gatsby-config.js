@@ -1,23 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Gatsby + Ghost Starter Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Greg Dickens `,
+      summary: `who builds affordable tech tools to help local news entrepreneurs build sustainable businesses.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `dickens_greg`,
     },
   },
   plugins: [
     `gatsby-plugin-image`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-ghost`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        apiUrl: `https://gatsby.ghost.io`,
+        contentApiKey: `9cc5c67c358edfdd81455149d0`,
       },
     },
     {
@@ -25,7 +24,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
